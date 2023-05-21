@@ -1,5 +1,5 @@
-let users=[];
 let user_name= document.getElementById("get_user");
+
 class Memoret {
     constructor(totalTime, cards) {
         this.cardsArray = cards;
@@ -36,15 +36,17 @@ class Memoret {
         clearInterval(this.countdown);
         document.getElementById('game-over-text').classList.add('visible');
         let puntuacion_tiempo=this.timeRemaining;
-        let puntuacion_total=1000*(puntuacion_tiempo/this.totalTime)
-        save_data((user_name.value),puntuacion_total, users);
+        let puntuacion_total=1000*(puntuacion_tiempo/this.totalTime);
+        save_data((user_name.value),puntuacion_total);
+        read_data();
     }
     victory() {
         clearInterval(this.countdown);
-        document.getElementById('victory-text').classList.add('visible');
+        document.getElementById('game-over-text').classList.add('visible');
         let puntuacion_tiempo=this.timeRemaining;
-        let puntuacion_total=1000*(puntuacion_tiempo/this.totalTime)
-        save_data(user_name,puntuacion_total,users);
+        let puntuacion_total=Math.round(1000*(puntuacion_tiempo/this.totalTime));
+        save_data((user_name.value),puntuacion_total);
+        read_data();
     }
     hideCards() {
         this.cardsArray.forEach(card => {
@@ -97,7 +99,7 @@ class Memoret {
         }
     }
     getCardType(card) {
-        return card.getElementsByClassName('card-value')[0].src;
+        return card.getElementsByClassName('card_value')[0].src;
     }
     canFlipCard(card) {
         return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
@@ -109,6 +111,9 @@ if (document.readyState == 'loading') {
 } else {
     start();
 }
+
+
+
 function show_start(){
     let user_box=document.querySelector(".control-buttons");
     user_box.style.display="block"
@@ -123,12 +128,11 @@ overlays.forEach(overlay => {
 
 
 
-
 function start() {
     show_start();
     var btn= document.getElementById("btn");
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new Memoret(2, cards);
+    let game = new Memoret(180, cards);
 
     btn.addEventListener("click", valid,true)
     function valid(){
@@ -137,7 +141,6 @@ function start() {
         }else{
             game.startGame();
             document.querySelector(".control-buttons").remove();
-            read_data();
         }   
     }
 
@@ -149,36 +152,60 @@ function start() {
     });
 }
 
-
-function save_data(name_user,score_user, users){
-        users.push({"user_name": name_user, "puntuacion": score_user});
-        localStorage.setItem("players", JSON.stringify(users));
+function save(players,name_user,score_user){
+    players.push({userName: name_user, puntuationMax: score_user});
+    localStorage.setItem("players", JSON.stringify(players));
 }
 
+function ordenarAsc(players, points) {
+    players.sort(function (a, b) {
+       return a[points] > b[points];
+    });
+ }
+
+function save_data(name_user,score_user){
+    let se_repite=false;
+    let players=JSON.parse(localStorage.getItem("players"));
+    console.log(players);
+    for(i=0; i<players.length; i++){
+        if(players[i].userName==name_user){
+            if(score_user>players[i].puntuationMax){
+                players[i].puntuationMax=score_user;
+            }
+            se_repite=true;
+        } 
+    }
+    if(se_repite==false){
+        save(players,name_user,score_user);
+    }
+
+    let players_organize=ordenarAsc(players,puntuationMax);
+    
+    localStorage.setItem("players",JSON.stringify(players_organize));
+    
+    
+}
+
+function crear_table(players){
+    let string_tabla="<tr><th>Usuario</th><th>Puntuacion</th></tr>"
+    for(let user of players){
+        let fila="<tr> <td>"
+        fila+=user.userName;
+        fila+= "</td>"
+
+        fila+="<td>"
+        fila+=user.puntuationMax;
+        fila+= "</td>"
+
+        fila+="</tr>";
+        string_tabla+=fila;
+    }
+
+    return string_tabla;
+
+}
 function read_data(){
     let players=JSON.parse(localStorage.getItem("players"));
-    for(i=0; i<players.length; i++){
-        var dictionary=players[i];
-        for(i=0;i<dictionary.length;i++){
-            document.getElementById("game-over-text").innerHTML = dictionary[i];
-        }
-        
-    }
-    
-
-
-
-
-    if(players!=null){
-        players=JSON.parse(localStorage.getItem("players"));
-    }
-    for (i=0; i<players.length; i++){
-        console.log(players[i]);
-    }
-
+    let table=crear_table(players)
+    document.getElementById("table_puntuation").innerHTML=table;
 }
-    
-
-
-
-

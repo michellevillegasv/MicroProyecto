@@ -9,159 +9,162 @@
   <title>Metromet Game</title>
 </head>
 <body>
-  <h1 class="page-title">METROMET</h1>
+  <h1 class="page-title">MEMORET GAME</h1>
   
   <div id="game-over-text" class="overlay-text">
-    <div id="usuario"></div>
-    <div id="puntuation"></div>
-    <button id="btn2">Reiniciar Juego</button>
+    <span id="info_box_final">
+        <div id="puntuation_label">PUNTUACION</div>
+        <table id="table_puntuation"></table>
+        <button id="btn2">Reiniciar Juego</button>
+    </span>
   </div>
 
   <div class="control-buttons">
     <span id="user_box">
-        USER
+        <div id="welcome">MEMORET</div>
+        <div id="label1">INGRESE USERNAME</div>  
         <input type="text" id="get_user">
         <button id="btn">Empezar Juego</button>
     </span>
   </div>
 
 
-  <div class="game-container">
-    <div class="game-info-container">
-      <div class="game-info">
-        Time <span id="time-remaining">180</span>
+  <div class="game_container">
+    <div class="game_info_container">
+      <div class="game_info">
+        Timer: <span id="time-remaining">180</span>
       </div>
-      <div class="game-info">
-        Flips <span id="flips">0</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-back card-face">
-        <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-      </div>
-      <div class="card-front card-face">
-        <img class="card-value" src="https://sites.google.com/site/equipogav06/_/rsrc/1363960300121/config/customLogo.gif?revision=2">
+      <div class="game_info">
+        Flips: <span id="flips">0</span>
       </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
+      <div class="card_back card_face">
+        <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+      </div>
+      <div class="card_front card_face">
+        <img class="card_value" src="tarjeta8.svg">
+      </div>
+    </div>
+    <div class="card">
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
         </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://sites.google.com/site/equipogav06/_/rsrc/1363960300121/config/customLogo.gif?revision=2">
-          </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta8.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://www.unimet.edu.ve/wp-content/uploads/2020/04/PHOTO-2020-04-16-15-10-57.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta7.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://www.unimet.edu.ve/wp-content/uploads/2020/04/PHOTO-2020-04-16-15-10-57.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta7.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMb600dPvBsGNdZquNqZVx-FWs8FX_GHM21g&usqp=CAU">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta6.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMb600dPvBsGNdZquNqZVx-FWs8FX_GHM21g&usqp=CAU">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta6.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://pbs.twimg.com/media/FmHrJ7qX0AAfHMo?format=jpg&name=4096x4096">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta5.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://pbs.twimg.com/media/FmHrJ7qX0AAfHMo?format=jpg&name=4096x4096">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta5.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://www.unimet.edu.ve/wp-content/uploads/2020/10/Campus-galer%C3%ADa-29.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta4.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://www.unimet.edu.ve/wp-content/uploads/2020/10/Campus-galer%C3%ADa-29.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta4.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://www.unimet.edu.ve/unimetsite/wp-content/uploads/2014/09/IMG_9916.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta 3.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://www.unimet.edu.ve/unimetsite/wp-content/uploads/2014/09/IMG_9916.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta 3.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://www.unimet.edu.ve/wp-content/uploads/2019/10/sin-t%C3%ADtulo-1.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta2.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://www.unimet.edu.ve/wp-content/uploads/2019/10/sin-t%C3%ADtulo-1.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta2.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://pbs.twimg.com/profile_images/1296261381268942848/uT1GZtpO_400x400.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta1.svg">
+        </div>
     </div>
     <div class="card">
-        <div class="card-back card-face">
-            <img class="spider" src="https://gallant.co.za/wp-content/uploads/2021/01/unimet-thumbnail.png">
-          </div>
-          <div class="card-front card-face">
-            <img class="card-value" src="https://pbs.twimg.com/profile_images/1296261381268942848/uT1GZtpO_400x400.jpg">
-          </div>
+        <div class="card_back card_face">
+          <img class="logo_unimet" src="https://apilo.com/wp-content/uploads/2022/03/unimet.png">
+        </div>
+        <div class="card_front card_face">
+          <img class="card_value" src="tarjeta1.svg">
+        </div>
     </div>
   </div>
 
