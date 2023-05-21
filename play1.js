@@ -1,4 +1,5 @@
 let user_name= document.getElementById("get_user");
+let user=[];
 
 class Memoret {
     constructor(totalTime, cards) {
@@ -157,33 +158,32 @@ function save(players,name_user,score_user){
     localStorage.setItem("players", JSON.stringify(players));
 }
 
-function ordenarAsc(players, points) {
-    players.sort(function (a, b) {
-       return a[points] > b[points];
-    });
- }
 
 function save_data(name_user,score_user){
     let se_repite=false;
     let players=JSON.parse(localStorage.getItem("players"));
-    console.log(players);
+    if(players==null){
+        save(user,name_user,score_user);
+    } else {
     for(i=0; i<players.length; i++){
-        if(players[i].userName==name_user){
-            if(score_user>players[i].puntuationMax){
+        if((players[i].userName)==name_user){
+            if(score_user>(players[i].puntuationMax)){
                 players[i].puntuationMax=score_user;
-            }
-            se_repite=true;
-        } 
-    }
+        }
+        se_repite=true;     
+        }
+    }  
     if(se_repite==false){
         save(players,name_user,score_user);
     }
+    localStorage.setItem("players",JSON.stringify(players));
+    }
+}
 
-    let players_organize=ordenarAsc(players,puntuationMax);
-    
-    localStorage.setItem("players",JSON.stringify(players_organize));
-    
-    
+function read_data(){
+    let players=JSON.parse(localStorage.getItem("players"));
+    let table=crear_table(players)
+    document.getElementById("table_puntuation").innerHTML=table;
 }
 
 function crear_table(players){
@@ -203,9 +203,4 @@ function crear_table(players){
 
     return string_tabla;
 
-}
-function read_data(){
-    let players=JSON.parse(localStorage.getItem("players"));
-    let table=crear_table(players)
-    document.getElementById("table_puntuation").innerHTML=table;
 }
