@@ -116,8 +116,7 @@ function show_start(){
 let overlays = Array.from(document.getElementsByClassName('overlay-text'));
 overlays.forEach(overlay => {
     overlay.addEventListener('click', () => {
-        overlay.classList.remove('visible');
-        show_start();
+        location.reload();
     });
 });
 
@@ -130,14 +129,7 @@ function start() {
     var btn= document.getElementById("btn");
     let cards = Array.from(document.getElementsByClassName('card'));
     let game = new Memoret(2, cards);
-    
 
-
-    
-
-    
-    
-    
     btn.addEventListener("click", valid,true)
     function valid(){
         if((user_name.value).length==0){
@@ -165,8 +157,15 @@ function save_data(name_user,score_user, users){
 
 function read_data(){
     let players=JSON.parse(localStorage.getItem("players"));
-
+    for(i=0; i<players.length; i++){
+        var dictionary=players[i];
+        for(i=0;i<dictionary.length;i++){
+            document.getElementById("game-over-text").innerHTML = dictionary[i];
+        }
+        
+    }
     
+
 
 
 

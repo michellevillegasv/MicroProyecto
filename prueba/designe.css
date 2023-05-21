@@ -185,22 +185,17 @@ body {
   background-color:#157A6E;
 }
 .overlay-text {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 150;
+  position: absolute;
   display: none;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: #FFF;
-  background-color: #070707;
-  font-family:'Chakra Petch', sans-serif;
-  font-size:1em;
-  color: #070707;
-  transition: background-color 500ms, font-size 500ms;
+  align-content: space-between;
+  justify-content: space-between;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 900px;
+  z-index: 2;
+  background-color:#157A6E;
 }
 
 #btn{
@@ -216,7 +211,7 @@ body {
 
 .overlay-text.visible {
   display: flex;
-  animation: overlay-grow 500ms forwards;
+  animation: overlay-grow 50ms forwards;
 }
 
 @keyframes dance {
