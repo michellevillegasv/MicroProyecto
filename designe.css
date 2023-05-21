@@ -32,7 +32,7 @@ body {
   font-family: 'Darumadrop One', cursive;
   font-weight: normal;
   text-align: center;
-  font-size: 6.5em;
+  font-size: 6em;
 }
 
 .game_info_container {
@@ -126,19 +126,8 @@ body {
   font-size: 3em;
   font-family: 'Darumadrop One', cursive;
 }
-.win_game{
-  display: none;
-  position: absolute;
-  align-content: space-between;
-  justify-content: space-between;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  width: 400px;
-  height: 900px;
-  z-index: 2;
-  background-color:#157A6E;
-}
+
+
 .overlay-text {
   position: fixed;
   display: none;
